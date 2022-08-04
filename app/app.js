@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		.then(function (_client) {
 			window.client = _client;
 			client.events.on('app.activated', function () {
+				client.iparams.get().then(function(data){
+					console.log(data)
+					
+				}),
 				onLoadClickEventHandler();
 			});
 		})
